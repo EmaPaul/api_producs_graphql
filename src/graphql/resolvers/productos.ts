@@ -60,8 +60,8 @@ const productosResolvers: IResolvers ={
                     return 'Product update'
                 }
                 throw new Error("Product does not exists");
-            }catch(err){
-                console.log(err)
+            }catch(err:any){
+                return err.message
             }
         }
     }
