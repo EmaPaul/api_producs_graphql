@@ -1,0 +1,39 @@
+type Query{
+    # hello: String
+    getProducts:[Product]
+    getProduct(_id: ID): Product
+    searchProducts(name: String!): [Product]
+}
+
+type Mutation{
+    createProduct(product:NewProductInput):String
+    editProduct(_id:ID!,product:EditProductInput!):String!
+}
+
+type Product{
+    _id:ID
+    name:String
+    price:Float
+    stock:Int
+    img:String
+}
+
+# enum Imagen{
+#     PNG
+#     JPG
+#     WEBP
+# }
+
+input NewProductInput{
+    name:String!
+    price:Float!
+    stock:Int!
+    img:String!
+}
+
+input EditProductInput{
+    name:String
+    price:Float
+    stock:Int
+    img:String
+}
